@@ -1,7 +1,11 @@
 class Solution:
     def findUnion(self, a, b):
-        # Convert both arrays into a set to remove duplicates
-        union_set = set(a) | set(b)
+        # Use set to store unique elements
+        union_set = set(a)
         
-        # Return sorted list (as driver code expects sorted output)
+        # Add elements from second array
+        for num in b:
+            union_set.add(num)
+        
+        # Return sorted list
         return sorted(union_set)
